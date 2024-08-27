@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as d,a4 as a}from"./chunks/framework.AxSQlOX8.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"notes/index.md","filePath":"notes/index.md"}'),r={name:"notes/index.md"},h=a("",6),i=[h];function o(n,s,c,l,_,b){return d(),e("div",null,i)}const m=t(r,[["render",o]]);export{p as __pageData,m as default};
