@@ -17,9 +17,9 @@ export default defineConfig({
       {
         text: '我的项目',
         items: [
-          { text: 'Vue 3', link: 'https://kaizhou-chen.github.io/vue3-example/' },
-          { text: 'React', link: 'https://kaizhou-chen.github.io/react-example/' },
-          { text: 'uniapp h5', link: 'https://kaizhou-chen.github.io/uniapp-example/' },
+          { text: 'Vue 3 + Element Plus', link: 'https://kaizhou-chen.github.io/vue3-example/' },
+          { text: 'React + Ant Design', link: 'https://kaizhou-chen.github.io/react-example/' },
+          { text: 'uni-app h5', link: 'https://kaizhou-chen.github.io/uniapp-example/' },
         ]
       }
     ],
@@ -37,6 +37,7 @@ export default defineConfig({
         ...getSidebar('Vite', 'docs/notes/Vite'),
 
         // 其他菜单项
+        { text: 'CSS 笔记', link: 'https://kaizhou-chen.github.io/vue3-example/#/notes/css' },
         { text: '部署到github', link: '/notes/部署到github' },
         { text: '开发工具', link: '/notes/开发工具' },
         { text: '面试问题', link: '/notes/面试问题' },

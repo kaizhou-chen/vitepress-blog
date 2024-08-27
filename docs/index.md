@@ -13,13 +13,13 @@ hero:
 
 features:
   - title: JavaScript、CSS
-    details: ES6、CSS3、TypeScript、Sass、Less
+    details: '基础：ES6、TypeScript<br>样式：CSS 3、Sass、Less'
   - title: Vue
-    details: Vue 2 + Element UI、Vue 3 + Element Plus
+    details: '管理系统：Vue 2 + Element UI、Vue 3 + Element Plus<br>报表展示：ECharts'
   - title: React
-    details: React Hooks、Ant Design、ahooks
+    details: '业务中台：React Hooks、Ant Design、ahooks'
   - title: uni-app
-    details: uni-app、uni-ui + Vue 3
+    details: '移动端：uni-app、uni-ui'
 
 ---
 

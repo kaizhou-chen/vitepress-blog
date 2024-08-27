@@ -18,8 +18,8 @@
 
 ### 框架
 
-| Vue | React    | Web 前端   | 移动端       |
+| Vue | React    | Web前端   | 移动端       |
 | ----------- | ------------ | ------------ | ------------ |
-| Vue 2、Vue 3 | React Hooks | Element Plus | 小程序：uniapp |
+| Vue 2、Vue 3 | React Hooks | Element Plus | uni-app |
 | Vue Router、Pinia、Vuex | React Router、React Redux | Ant Design |  |
 
