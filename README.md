@@ -1,5 +1,3 @@
-# vitepress-blog
-
 ## 简介
 
 基于 VitePress 搭建的个人博客，用于记录前端开发中的问题和笔记。
