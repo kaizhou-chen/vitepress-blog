@@ -70,7 +70,7 @@ function diffPath(file, baseDir) {
   const folder = path.join(file, '../')
   const diff = path.relative(baseDir, folder)
   const len = diff.split(separator).length;
-  const relativePath = (new Array(len)).fill('../').join('')
+  const relativePath = (new Array(len - 1)).fill('../').join('')
   return relativePath;
 }
 
