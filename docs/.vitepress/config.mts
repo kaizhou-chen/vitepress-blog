@@ -3,22 +3,38 @@ import { getSidebar } from './utils/sidebar'
 
 const getDefaultSidebar = () => {
   return [
-    { text: '开发工具', link: '/notes/' },
-    ...getSidebar('JavaScript 基础', 'docs/javascript/JavaScript基础'),
-    ...getSidebar('JavaScript 高级', 'docs/javascript/JavaScript高级'),
-
-    { text: 'Vue', link: '/vue/' },
-    ...getSidebar('Vue 2', 'docs/vue/Vue2'),
-    ...getSidebar('Vue 3 基础', 'docs/vue/Vue3基础'),
-    ...getSidebar('Vue 3 高级', 'docs/vue/Vue3高级'),
-    ...getSidebar('Vite', 'docs/vue/Vite'),
-
-    { text: 'React', link: '/react/' },
-    ...getSidebar('React', 'docs/react/React'),
-
-    { text: '移动端', link: '/mobile/' },
-    ...getSidebar('uni-app', 'docs/mobile/uni-app'),
-    
+    {
+      text: '笔记',
+      items: [
+        { text: '开发工具', link: '/notes/' },
+        ...getSidebar('JavaScript 基础', 'docs/javascript/JavaScript基础'),
+        ...getSidebar('JavaScript 高级', 'docs/javascript/JavaScript高级'),
+      ]
+    },
+    {
+      text: 'Vue',
+      items: [
+        { text: '概览', link: '/vue/' },
+        ...getSidebar('Vue 2', 'docs/vue/Vue2'),
+        ...getSidebar('Vue 3 基础', 'docs/vue/Vue3基础'),
+        ...getSidebar('Vue 3 高级', 'docs/vue/Vue3高级'),
+        ...getSidebar('Vite', 'docs/vue/Vite'),
+      ]
+    },
+    {
+      text: 'React',
+      items: [
+        { text: '概览', link: '/react/' },
+        ...getSidebar('React', 'docs/react/React'),
+      ]
+    },
+    {
+      text: '移动端',
+      items: [
+        { text: '概览', link: '/mobile/' },
+        ...getSidebar('uni-app', 'docs/mobile/uni-app'),
+      ]
+    },
     {
       text: '其他',
       items: [
@@ -89,7 +105,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/kaizhou-chen/vitepress-blog' }
     ],
 
     // 支持搜索
