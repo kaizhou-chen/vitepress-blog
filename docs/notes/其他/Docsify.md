@@ -98,7 +98,7 @@ window.$docsify = {
 所有图片都使用相对路径，保证在本地可以正常查看。比如
 
 ```markdown
-![](../assets/images/JavaScript/原型链.png)
+![](../../assets/images/JavaScript/原型链.png)
 ```
 
 在页面渲染时，将图片上的相对路径都去掉，保证图片可以正常查看。比如
@@ -136,4 +136,4 @@ window.$docsify = {
 
 配置 GitHub Pages，选择部署 main 分支
 
-![github-pages](../assets/images/其他/GitHub/github-pages.png)
+![github-pages](../../assets/images/其他/GitHub/github-pages.png)
