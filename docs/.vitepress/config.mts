@@ -7,8 +7,9 @@ const getDefaultSidebar = () => {
       text: '笔记',
       items: [
         { text: '开发工具', link: '/notes/' },
+        { text: 'CSS 概览', link: '/notes/CSS概览' },
         ...getSidebar('JavaScript 基础', 'docs/javascript/JavaScript基础'),
-        ...getSidebar('JavaScript 高级', 'docs/javascript/JavaScript高级'),
+        ...getSidebar('JavaScript 笔记', 'docs/javascript/JavaScript笔记'),
       ]
     },
     {
