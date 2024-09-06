@@ -25,23 +25,23 @@
 ```css
 /* 宽度小于 700px  */
 @media screen and (max-width:699px) {
-	.box {
-		background-color: green;
-	}
+  .box {
+    background-color: green;
+  }
 }
 
 /* 宽度介于 700px - 1200px  */
 @media screen and (min-width:700px) and (max-width:1200px) {
-	.box {
-		background-color: red;
-	}
+  .box {
+    background-color: red;
+  }
 }
  
 /* 宽度大于 1200px  */
 @media screen and (min-width:1201px) {
-	.box {
-		background-color: blue;
-	}
+  .box {
+    background-color: blue;
+  }
 }
 ```
 
@@ -107,9 +107,9 @@ display: grid;
 - grid-template-areas：定义区域
 ```css
   grid-template-areas: 
-  	'A A B'
-  	'C D B'
-  	'C E E';
+    'A A B'
+    'C D B'
+    'C E E';
 ```
 
 
@@ -160,15 +160,15 @@ display: grid;
 
 ```css
 @media screen and (min-width: 700px) {
-	html{
-		font-size: 14px;
-	}
+  html{
+    font-size: 14px;
+  }
 }
  
 @media screen and (min-width: 960px) {
-	html{
-		font-size: 18px;
-	}
+  html{
+    font-size: 18px;
+  }
 }
  
 div {
@@ -216,11 +216,11 @@ div.style.setProperty('--text-color', '#fff');
 
 ```css
 .box {
-	transition: 1s;
-	
-	&:hover {
-		transform: scale(1.2);
-	}
+  transition: 1s;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 ```
 
