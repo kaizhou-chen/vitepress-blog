@@ -1,0 +1,9 @@
+/**
+https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css#L52
+*/
+
+/** 使用深色 */
+:root {
+  --vp-code-block-bg: #161618; /** 代码块，背景色 */
+  --vp-code-block-color: rgba(235, 235, 245, 0.6); /** 代码文字颜色 */
+}
