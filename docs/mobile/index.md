@@ -7,7 +7,28 @@
 
 
 
-## 1、通过CSS变量实现动态高度
+## 1、移动端 1px 边框问题
+
+- 使用 `transform: scaleY(0.5)`
+
+```css
+.border {
+  border: 1px solid #ccc;
+  transform: scaleY(0.5);
+}
+```
+
+- 使用 `border-image`
+
+```css
+.border {
+  border: 1px solid #ccc;
+  border-image: linear-gradient(to right, #ccc, #ccc 50%, transparent 50%) 0 0 100% 0/1px 0 stretch;
+}
+```
+
+
+## 2、动态高度：通过 CSS 变量实现
 
 ### 获取元素高度
 
@@ -49,7 +70,28 @@ query.exec((res) => {
 
 
 
-## 2、图片懒加载
+## 3、图片懒加载
+
+### 微信小程序
+
+#### wx.createIntersectionObserver
+
+```js
+const instance = getCurrentInstance()
+
+const observer = uni.createIntersectionObserver(instance).relativeToViewport()
+observer.observe('.music-img', (res) => {
+  if (res.intersectionRatio > 0) {
+    imageSrc.value = src.value
+  }
+})
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+  }
+})
+```
 
 ### 浏览器
 
@@ -91,25 +133,3 @@ Array.from(img).forEach(item => {
 ```
 
 :::
-
-### 微信小程序
-
-#### wx.createIntersectionObserver
-
-```js
-const instance = getCurrentInstance()
-
-const observer = uni.createIntersectionObserver(instance).relativeToViewport()
-observer.observe('.music-img', (res) => {
-  if (res.intersectionRatio > 0) {
-    imageSrc.value = src.value
-  }
-})
-
-onUnmounted(() => {
-  if (observer) {
-    observer.disconnect()
-  }
-})
-```
-

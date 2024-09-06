@@ -54,6 +54,60 @@ D:\node_modules\npm_global
 
 
 
+### pnpm
+
+[基本使用教程](https://blog.csdn.net/m0_56416743/article/details/136122153)
+
+安装
+
+```bash
+npm install -g pnpm
+```
+
+查看版本
+
+```bash
+npm -v
+```
+
+> 如果提示 “**pnpm不是内部或外部命令**”，则参考上一步，检查环境变量的配置
+
+配置源
+
+```bash
+# 获取当前配置的镜像地址
+pnpm config get registry
+
+# 设置新的镜像地址
+pnpm config set registry https://registry.npmmirror.com
+```
+
+修改官方默认的安装包安装路径位置
+
+```bash
+# 允许设置全局安装包的 bin 文件的目标目录。
+pnpm config set global-bin-dir "D:\pnpm-store"
+
+# 包元数据缓存的位置。
+pnpm config set cache-dir "D:\pnpm-store\pnpm-cache"
+
+# pnpm 创建的当前仅由更新检查器使用的 pnpm-state.json 文件的目录。
+pnpm config set state-dir "D:\pnpm-store\pnpm-state"
+
+# 指定储存全局依赖的目录。
+pnpm config set global-dir "D:\pnpm-store\global"
+
+# 所有包被保存在磁盘上的位置。
+#（可选，以下这条命令可以选择不执行也是OK的）
+pnpm config set store-dir "D:\pnpm-store\pnpm-store"
+```
+
+配置文件
+
+> **C:\Users\用户名\AppData\Local\pnpm\config**
+
+![pnpm](../assets/images/其他/pnpm.png)
+
 ## Git
 
 ### 配置邮箱、账号、密码
@@ -244,7 +298,7 @@ reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\Inpr
 
 
 
-#### Bing Wallpaper
+### Bing Wallpaper
 
 图片存放在  **%USERPROFILE%\AppData\Local\Microsoft\BingWallpaperApp\WPImages** 
 
@@ -302,19 +356,17 @@ location ^~ /vue3-guide {
 
 
 
+### PixPin
+
+支持截图、贴图
+
+
+
 ### 搜狗输入法
 
-**1. 中文时使用中文标点**
+**中文时使用中文标点**
 
 输入法图标，右键 --> 更多设置 --> 常用 --> 中文时使用英文标点【取消勾选】
-
-<br>
-
-**2. 截图快捷键，设置为 Ctrl + Shift + A**
-
-输入法图标，右键  -->  更多设置  -->  按键  -->  系统功能快捷键设置 -->  截图
-
-![](../assets/images/其他/sogou.png)
 
 
 
@@ -338,12 +390,6 @@ location ^~ /vue3-guide {
 ![](../assets/images/其他/DawnLauncher/DawnLauncher_watch_floder.png)
 
 
-
-
-
-### PixPin
-
-支持截图、贴图
 
 ### 本地开发
 

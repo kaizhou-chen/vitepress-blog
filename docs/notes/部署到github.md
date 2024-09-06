@@ -62,53 +62,6 @@ jobs:
 
 
 
-### 关于 .gitignore
-
-> [!ATTENTION]
-> dist 目录可能会在 .gitignore 文件里，在提交时被忽略掉
->
-> 但是部署时，需要把 dist 目录提交到 `gh-pages` 分支，不能被忽略掉
->
-> 所以需要再写一个打包命令，在打包时，覆盖掉 .gitignore 文件
-
-#### package.json
-
-```js
-{
-  "scripts": {
-    // 新的打包命令，添加参数 --deploy
-    
-    "build:github": "run-p type-check \"build-deploy {@}\" --",
-    "build-deploy": "vite build --mode production -- --deploy"
-  },
-}
-```
-
-#### vite.config.ts
-
-```js
-{
-  plugins: [
-    vue(),
-
-    // 自定义插件
-    {
-      name: 'copy-gitignore',
-      writeBundle() {
-        // 如果是部署到 github，则覆盖 .gitignore
-        if (process.argv.includes('--deploy')) {
-          const src = path.resolve(__dirname, '.bak/.gitignore');
-          const dest = path.resolve(__dirname, '.gitignore');
-          fs.copyFile(src, dest, () => {})
-        }
-      }
-    }
-  ],
-}
-```
-
-在根目录下新建 `.bak` 文件夹，把 .gitignore 复制到里面，删除掉 dist。在打包时，用来覆盖 .gitignore
-
 ### gh-pages 分支
 
 提交到代码仓后，会自动创建 `gh-pages` 分支
@@ -165,3 +118,53 @@ export default defineConfig({
 参考文档： 
 
 [打包部署到github后文件`_plugin-vue_export-helper`访问不到](https://blog.csdn.net/mouday/article/details/131612524)
+
+
+
+### 关于 .gitignore
+
+::: tip
+dist 目录可能会在 .gitignore 文件里，在提交时被忽略掉
+
+但是部署时，需要把 dist 目录提交到 `gh-pages` 分支，不能被忽略掉
+
+所以需要再写一个打包命令，在打包时，覆盖掉 .gitignore 文件
+:::
+
+#### package.json
+
+```js
+{
+  "scripts": {
+    // 新的打包命令，添加参数 --deploy
+    
+    "build:github": "run-p type-check \"build-deploy {@}\" --",
+    "build-deploy": "vite build --mode production -- --deploy"
+  },
+}
+```
+
+#### vite.config.ts
+
+```js
+{
+  plugins: [
+    vue(),
+
+    // 自定义插件
+    {
+      name: 'copy-gitignore',
+      writeBundle() {
+        // 如果是部署到 github，则覆盖 .gitignore
+        if (process.argv.includes('--deploy')) {
+          const src = path.resolve(__dirname, '.bak/.gitignore');
+          const dest = path.resolve(__dirname, '.gitignore');
+          fs.copyFile(src, dest, () => {})
+        }
+      }
+    }
+  ],
+}
+```
+
+在根目录下新建 `.bak` 文件夹，把 .gitignore 复制到里面，删除掉 dist。在打包时，用来覆盖 .gitignore

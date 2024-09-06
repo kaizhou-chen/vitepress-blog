@@ -259,11 +259,11 @@ e.detail.code 为城市编码
 
 [交互反馈，官方文档](https://zh.uniapp.dcloud.io/api/ui/prompt.html)
 
-#### 模态弹窗 uni.showModal
+#### 模态弹窗 uni.showModal 【二次确认】
 
 让用户进行二次确认
 
-#### 消息提示框 uni.showToast
+#### 消息提示框 uni.showToast  【成功、失败】
 
 成功提示、失败提示
 
@@ -330,24 +330,58 @@ const onSubmit = async () => {
 
 
 
+## 6、订单详情
+
+### 获取页面栈 getCurrentPages
+
+如果有多个页面，则表示可以后退 navigateBack。否则，只能回到首页
+
+```html
+const pages = getCurrentPages();
+
+<navigator v-if="pages.length > 1" open-type="navigateBack"></navigator>
+<navigator v-else url="/pages/index/index" open-type="switchTab"></navigator>
+```
+
+### 滚动驱动的动画 animate
+
+[微信小程序 - 滚动驱动的动画](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-2)
+
+当前页面是页面栈的最后一项
+
+```js
+const pageInstance = pages[pages.length - 1] as any
+
+pageInstance.animate('.search_input', [{
+  opacity: '0',
+  width: '0%',
+}, {
+  opacity: '1',
+  width: '100%',
+}], 1000, {
+  scrollSource: '#scroller',
+  timeRange: 1000,
+  startScrollOffset: 120,
+  endScrollOffset: 252
+})
+```
+
+### 倒计时 uni-countdown
+
+### 微信支付 wx.requestPayment
+
+
+
 # 其他
 
 ## TypeScript
 
-### Required
+### 联合类型
 
-将类型里的所有属性都标识为必选项
-
-```javascript
-Required<PageParams>
-```
-
-### InstanceType
-
-实例类型
+联合多种类型
 
 ```typescript
-InstanceType<type of Component>
+type count = number | string
 ```
 
 ### 交叉类型
@@ -370,13 +404,21 @@ enum SkuMode {
 }
 ```
 
+### Required
 
+将类型里的所有属性都标识为必选项
 
-## 生成随机图片
+```javascript
+Required<PageParams>
+```
 
-可以在 url 上设置图片的宽度和高度
+### InstanceType
 
-http://picsum.photos/200/300
+实例类型
+
+```typescript
+InstanceType<type of Component>
+```
 
 
 
