@@ -4,9 +4,18 @@ https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/var
 
 /** 使用深色 */
 :root {
-  --vp-code-block-bg: #161618; /** 代码块，背景色 */
-  --vp-code-block-color: rgba(235, 235, 245, 0.6); /** 代码文字颜色 */
+  /** 代码块，背景色 */
+  --vp-code-block-bg: #161618; 
 
-  --vp-code-line-number-color: rgba(235, 235, 245, 0.38); /** 行号颜色 */
+  /** 代码文字颜色 */
+  --vp-code-block-color: rgba(235, 235, 245, 0.6); 
+
+  /** 行号颜色 */
+  --vp-code-line-number-color: rgba(235, 235, 245, 0.38);
   --vp-code-block-divider-color: rgba(235, 235, 245, 0.38);
+
+  /** tab 标题颜色 */
+  --vp-code-tab-text-color: rgba(235, 235, 245, 0.6);
+  --vp-code-tab-hover-text-color: rgba(255, 255, 245, 0.86);
+  --vp-code-tab-active-text-color: rgba(255, 255, 245, 0.86);
 }
